@@ -11,8 +11,13 @@
  * 
  */
 
-abstract class AJsArrayHelpers extends AJsChartHelpers implements AChartArrayData {
+abstract class AJsArrayHelpers extends AJsChartHelpers implements IJsChartArrayDataLoader {
 
+protected array $chartdata;
+
+public function loadData(array $arraydata) {
+	$this->$chartdata = $arraydata;
+}
 
 abstract public function renderChart();
 

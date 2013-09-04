@@ -11,11 +11,7 @@
 
 abstract class AChartArrayData implements IJsChartArrayDataLoader {
 
-protected array $chartdata;
 
-public function loadData(array $arraydata) {
-	$this->$chartdata = $arraydata;
-}
 
 
 }

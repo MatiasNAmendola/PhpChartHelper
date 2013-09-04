@@ -7,6 +7,7 @@
  * function names always start lowercase and are then camel cased
  * variable names are going to be all lowercase
  * 
+ * Each and every chart object will have a name and the ability to render a chart's code
  */
 
 interface IJsChartHelpers{
