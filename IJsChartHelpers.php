@@ -9,9 +9,9 @@
  * 
  */
 
-public interface IJsChartHelpers{
+interface IJsChartHelpers{
 
-public function setChartName(string $chartname);
+public function setChartName($chartname);
 
 public function getChartName();
 

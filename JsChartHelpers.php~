@@ -1,6 +1,6 @@
 <?php
 
-class JsChartHelpers extends AJsChartHelpers {
+class JsChartHelpers /*extends AJsChartHelpers*/ {
 
 public function renderChart() {
 	echo 'chart!';

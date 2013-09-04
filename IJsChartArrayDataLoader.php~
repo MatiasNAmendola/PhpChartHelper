@@ -9,9 +9,9 @@
  * 
  */
 
-interface IJsChartDataLoader{
+interface IJsChartArrayDataLoader{
 
-public function loadData($data);
+public function loadData($arraydata);
 
 }
 

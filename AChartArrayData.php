@@ -9,9 +9,14 @@
  * 
  */
 
-interface IJsChartDataLoader{
+abstract class AChartArrayData implements IJsChartArrayDataLoader {
 
-public function loadData($data);
+protected array $chartdata;
+
+public function loadData(array $arraydata) {
+	$this->$chartdata = $arraydata;
+}
+
 
 }
 

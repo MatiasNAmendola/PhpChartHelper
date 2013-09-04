@@ -9,9 +9,13 @@
  * 
  */
 
-interface IJsChartDataLoader{
+interface IJsChartHelpers{
 
-public function loadData($data);
+public function setChartName(/*string*/$chartname);
+
+public function getChartName();
+
+public function renderChart();
 
 }
 
