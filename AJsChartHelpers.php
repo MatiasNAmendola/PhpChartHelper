@@ -16,6 +16,7 @@ abstract class AJsChartHelpers implements IJsChartHelpers {
 protected $chartname;
 protected $jschartinit;
 protected $canvas;
+private $endjstag = '</script>';
 
 public function setChartName($chartname) {
 	$this->SetJsChartInit($chartname);
@@ -27,7 +28,7 @@ public function getChartName() {
 }
 
 public function setJsChartInit($chartname) {
-	$this->jschartinit = 'var $chartname = $("#' . $chartname . '").get(0).getContext("2d");';
+	$this->jschartinit = '<script type="text/javascript">var $chartname = $("#' . $chartname . '").get(0).getContext("2d");';
 }
 
 public function getJsChartInit() {
