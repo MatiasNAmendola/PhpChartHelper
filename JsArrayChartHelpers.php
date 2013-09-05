@@ -9,7 +9,7 @@
  * 
  */
 
-class JsChartHelpers extends AJsChartHelpers {
+class JsArrayChartHelpers extends AJsArrayHelpers {
 
 public function renderChart() {
 	echo '123chart!';
