@@ -19,7 +19,9 @@ abstract class AJsArrayHelpers extends AJsChartHelpers  {
 protected $counter = 1;
 
 
-
+public function resetCounter() {
+	$this->counter = 1;
+}
 
 abstract public function renderChart();
 

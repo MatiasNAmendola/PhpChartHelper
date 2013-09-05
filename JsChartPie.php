@@ -19,11 +19,11 @@ public function renderChart() {
 	echo $chart;
 }
 
-public function loadSingleData($value, $color) {
-	$piechartdata[$counter, 'value'] = $value;
-	$piechartdata[$counter, 'color'] = $color;
-	$counter++
+public function loadData(JsPieChartData $data) {
 }
+
+
+
 }
 
 ?>

@@ -12,13 +12,13 @@
 
 abstract class AJsChartData {
 
-protected $counter = 1;
+protected $counter = 0;
 
 public abstract function loadSettings(array $settings, $type = 'values');
 
 
 public function resetCounter() {
-	$this->counter = 1;
+	$this->counter = 0;
 }
 
 }
