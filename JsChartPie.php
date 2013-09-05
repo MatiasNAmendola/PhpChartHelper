@@ -14,7 +14,10 @@ class JsChartPie extends AJsArrayHelpers {
 
 protected $piechartdata = array();
 
-abstract public function renderChart();
+public function renderChart() {
+	$chart = $this->getJsChartInit();
+	echo $chart;
+}
 
 public function loadSingleData($value, $color) {
 	$piechartdata[$counter, 'value'] = $value;
