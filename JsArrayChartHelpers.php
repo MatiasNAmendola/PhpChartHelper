@@ -12,6 +12,7 @@
 class JsArrayChartHelpers extends AJsArrayHelpers {
 
 public function renderChart() {
+	foreach($this->chartdata as $value)
 	echo '123chart!';
 }
 

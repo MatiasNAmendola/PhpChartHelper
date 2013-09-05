@@ -9,14 +9,21 @@
  *
  * This is the basest of base classes for the chart helpers.
  * 
+ * This is made to load in a random array to create JsChart javascript charts 
+ *
  */
 
 abstract class AJsArrayHelpers extends AJsChartHelpers implements IJsChartArrayDataLoader {
 
 protected array $chartdata;
+protected $counter = 1;
 
 public function loadData(array $arraydata) {
-	$this->$chartdata = $arraydata;
+	$this->chartdata = $arraydata;
+}
+
+public function resetCounter() {
+	$this->counter = 1;
 }
 
 abstract public function renderChart();
