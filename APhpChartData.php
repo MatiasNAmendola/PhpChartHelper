@@ -23,6 +23,10 @@ public function resetCounter() {
 	$this->counter = 1;
 }
 
+public function getCounter() {
+	return $this->counter;
+}
+
 }
 
 ?>
