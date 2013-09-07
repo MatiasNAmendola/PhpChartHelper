@@ -44,8 +44,6 @@ public function getJsChartInit() {
 	return $this->jschartinit;
 }
 
-abstract public function renderChart();
-
 }
 
 

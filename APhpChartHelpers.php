@@ -13,7 +13,7 @@
 
 
 //Getting all html and javascript redundancy out of the way
-abstract class APhpChartHelpers implements IPhpChartHelpers {
+abstract class APhpChartHelpers implements IPhpChartHelper {
 
 protected $chartname;
 

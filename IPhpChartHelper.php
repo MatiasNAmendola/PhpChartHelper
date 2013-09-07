@@ -10,7 +10,7 @@
  * Each and every chart object will have a name and the ability to render a chart's code regardless of anything else
  */
 
-interface IJsChartHelpers{
+interface IPhpChartHelper {
 
 public function setChartName($chartname);
 
