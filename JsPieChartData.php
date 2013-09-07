@@ -11,31 +11,57 @@
  * Only single dimensional arrays are accepted.
  */
 
-class JsPieChartData extends AJsChartData {
+class JsPieChartData extends APhpChartData {
 
 
-protected array $values;
-protected array $colors;
+protected $values = array();
+protected $colors = array();
 
 public function loadValues(array $values) {
-	$this->values = $values;
 	foreach($values as $value) {
-		$counter++
+		array_push($this->values, $value);
+		$this->counter++;
 	}
 }
 
+public function loadValuesByKey(array $values, $key) {
+	foreach($values as $value) {
+		array_push($this->values, $value[$key]);
+		$this->counter++;
+	}
+}
+
+
 public function loadColors(array $colors) {
-	$this->colors = $colors;
+	foreach($colors as $color) {
+		array_push($this->colors, $color[$key]);
+	}
 }
 
-public function loadSettings(array $settings, $type = 'values') {
+public function loadColorsByKey(array $colors, $key) {
+	foreach($colors as $color) {
+		array_push($this->colors, $color[$key]);
+	}
+}
+
+public function loadArray(array $array, $type = 'values') {
 	if($type = 'values') {
-		$this->loadValues($settings);
-	} else {
-		$this->loadValues($colors);
-	}		
+		$this->loadValues($array);
+	}
+	elseif($type = 'colors') {
+		$this->loadColors($array);
+	}
 }
 
+public function loadKeyArray(array $array, $key, $type = 'values') {
+	if($type = 'values') {
+		$this->loadValuesByKey($array, $key);
+	}
+	elseif($type = 'colors') {
+		$this->loadColorsByKey($array, $key);
+	}
+
+}
 
 }
 

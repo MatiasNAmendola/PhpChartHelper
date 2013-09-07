@@ -14,7 +14,9 @@ abstract class APhpChartData {
 
 protected $counter = 1;
 
-public abstract function loadSettings(array $settings, $type = 'values');
+public abstract function loadArray(array $settings, $type = 'values');
+
+public abstract function loadKeyArray(array $array, $key, $type = 'values');
 
 
 public function resetCounter() {
