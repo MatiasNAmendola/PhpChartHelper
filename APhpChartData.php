@@ -12,7 +12,7 @@
 
 abstract class APhpChartData {
 
-protected $counter = 1;
+protected $counter = 0;
 
 public abstract function loadArray(array $settings, $type = 'values');
 
@@ -20,7 +20,7 @@ public abstract function loadKeyArray(array $array, $key, $type = 'values');
 
 
 public function resetCounter() {
-	$this->counter = 1;
+	$this->counter = 0;
 }
 
 public function getCounter() {
