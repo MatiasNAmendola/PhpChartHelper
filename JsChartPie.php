@@ -10,18 +10,23 @@
  *
  */
 
-class JsChartPie extends AJsArrayHelpers {
+class JsChartPie extends AJsChartHelpers {
 
-protected $piechartdata = array();
+
+//in this class this needs to be a JsPieChartData object
+private $piechartdata;
 
 public function renderChart() {
-	$chart = $this->getJsChartInit();
-	echo $chart;
+	echo 'testing pie chart';
 }
 
-public function loadData(JsPieChartData $data) {
-}
 
+//need to error handle if the wrong type of data gets passed here
+public function setData(AJsBaseChartData $piechartdata) {
+	if(get_class($piechartdata) == 'JsPieChartData'){
+		$this->piechartdata = $data;
+	}
+}
 
 
 }

@@ -11,9 +11,9 @@
  * Only single dimensional arrays are accepted.
  */
 
-class JsPieChartData extends APhpChartData {
+class JsPieChartData extends AJsBaseChartData {
 
-
+/*
 protected $values = array();
 protected $colors = array();
 
@@ -61,6 +61,11 @@ public function loadKeyArray(array $array, $key, $type = 'values') {
 		$this->loadColorsByKey($array, $key);
 	}
 
+}
+*/
+
+public function test() {
+	echo 'testinginsideclass';
 }
 
 }

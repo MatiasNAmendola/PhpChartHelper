@@ -18,8 +18,6 @@ abstract class AJsChartHelpers extends APhpChartHelpers {
 /* extended variables
  * chartname, endjstag
  *
- * extended func
- * getChartName()
  */
 
 //every chart starts this way in Chart.js
