@@ -13,7 +13,7 @@
 
 
 //Getting all html and javascript redundancy out of the way
-abstract class AJsChartHelpers implements IJsChartHelpers {
+abstract class AJsChartHelpers implements IPhpChartHelpers {
 
 protected $chartname;
 //every chart starts this way in Chart.js
