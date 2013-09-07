@@ -16,8 +16,6 @@
 abstract class APhpChartHelpers implements IPhpChartHelpers {
 
 protected $chartname;
-//every chart starts this way in Chart.js
-protected $jschartinit;
 
 protected $endjstag = '</script>';
 

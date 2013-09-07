@@ -7,30 +7,33 @@
  * function names always start lowercase and are then camel cased
  * variable names are going to be all lowercase
  *
- * This is the basest of base classes for the chart helpers.
+ * This is the basest of base classes for the chart helpers for Chartjs.
  * 
  */
 
 
 //Getting all html and javascript redundancy out of the way
-abstract class AJsChartHelpers implements IPhpChartHelpers {
+abstract class AJsChartHelpers extends APhpChartHelpers {
 
-protected $chartname;
+/* extended variables
+ * chartname, endjstag
+ *
+ * extended func
+ * getChartName()
+ */
+
 //every chart starts this way in Chart.js
 protected $jschartinit;
-
 protected $enddatatag = '}]';
-protected $endjstag = '</script>';
+
 
 //Setting chart name also sets up the beginning chart tag
+//this is an override
 public function setChartName($chartname) {
 	$this->setJsChartInit($chartname);
 	$this->chartname = $chartname;
 }
 
-public function getChartName() {
-	return $this->chartname;
-}
 
 //dynamic tags in case you want more than one chart
 public function setJsChartInit($chartname) {
