@@ -15,18 +15,33 @@ class JsChartPie extends AJsChartHelpers {
 
 //in this class this needs to be a JsPieChartData object
 private $piechartdata;
+public $chart;
 
 public function renderChart() {
-	echo 'testing pie chart';
+if($this->piechartdata != null) {
+	$this->chart = $this->getJsChartInit();
+	for($i = 0; $i <= $this->piechartdata->getCounter(); $i++) {
+		if($i > 0) {
+			$this->chart = $this->chart . '},{';
+		}
+		//for some reason I can pass in a literal integer but not a variable integer
+		$this->chart = $this->chart . 'value: ' . $this->piechartdata->getValue($i) . ',';
+		$this->chart = $this->chart . 'color: "' . $this->piechartdata->getColor(0) . '"';
+	}
+	$this->chart = $this->chart . '}]';
+	}else{	
+	echo 'NO CHART DATA LOADED';
+ }
 }
 
 
 //need to error handle if the wrong type of data gets passed here
 public function setData(AJsBaseChartData $piechartdata) {
 	if(get_class($piechartdata) == 'JsPieChartData'){
-		$this->piechartdata = $data;
+		$this->piechartdata = $piechartdata;
 	}
 }
+
 
 
 }

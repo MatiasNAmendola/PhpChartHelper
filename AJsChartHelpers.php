@@ -28,14 +28,14 @@ protected $enddatatag = '}]';
 //Setting chart name also sets up the beginning chart tag
 //this is an override
 public function setChartName($chartname) {
-	$this->setJsChartInit($chartname);
 	$this->chartname = $chartname;
+	$this->setJsChartInit($chartname);
 }
 
 
 //dynamic tags in case you want more than one chart
 public function setJsChartInit($chartname) {
-	$this->jschartinit = '<script type="text/javascript"> var ' . $chartname . 'chart = $("#' . $chartname . '").get(0).getContext("2d"); var ' . $this->getChartName() . 'data = [{';
+	$this->jschartinit = '<!--<script type="text/javascript">--> var ' . $chartname . 'chart = $("#' . $chartname . '").get(0).getContext("2d"); var ' . $this->getChartName() . 'data = [{';
 }
 
 public function getJsChartInit() {
