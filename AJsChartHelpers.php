@@ -35,7 +35,7 @@ public function setChartName($chartname) {
 
 //dynamic tags in case you want more than one chart
 public function setJsChartInit($chartname) {
-	$this->jschartinit = '<!--<script type="text/javascript">--> var ' . $chartname . 'chart = $("#' . $chartname . '").get(0).getContext("2d"); var ' . $this->getChartName() . 'data = [{';
+	$this->jschartinit = '<script type="text/javascript"> var ' . $chartname . 'chart = $("#' . $chartname . '").get(0).getContext("2d"); var ' . $this->getChartName() . 'data = [{';
 }
 
 public function getJsChartInit() {

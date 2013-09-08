@@ -20,15 +20,18 @@ public $chart;
 public function renderChart() {
 if($this->piechartdata != null) {
 	$this->chart = $this->getJsChartInit();
-	for($i = 0; $i <= $this->piechartdata->getCounter(); $i++) {
+	for($i = 0; $i <= $this->piechartdata->getCounter() -1; $i++) {
 		if($i > 0) {
 			$this->chart = $this->chart . '},{';
 		}
 		//for some reason I can pass in a literal integer but not a variable integer
 		$this->chart = $this->chart . 'value: ' . $this->piechartdata->getValue($i) . ',';
-		$this->chart = $this->chart . 'color: "' . $this->piechartdata->getColor(0) . '"';
+		$this->chart = $this->chart . 'color: "' . $this->piechartdata->getColor($i) . '"';
 	}
-	$this->chart = $this->chart . '}]';
+	$this->chart = $this->chart . '}];';
+	$this->chart = $this->chart . 'var ' . $this->chartname . 'newchart  = new Chart(' .$this->chartname.'chart).Pie('.$this->chartname.'data);';
+	$this->chart = $this->chart . $this->endjstag;
+	echo $this->chart;
 	}else{	
 	echo 'NO CHART DATA LOADED';
  }
