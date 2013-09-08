@@ -9,12 +9,14 @@
  *
  *
  */
-
+//namespace PhpChartHelper;
+ 
+//use this in all charts with colors non-specified
 class JsChartColorIterator {
 
 public $colors = array("red","blue","yellow","green","pink","orange","black","white");
 
-
+// these will be the default colors
 public static function getColors() {
 	$colors = array("red","blue","yellow","green","pink","orange","black","white");
 	return $colors;

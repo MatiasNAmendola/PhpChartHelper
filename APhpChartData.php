@@ -9,13 +9,18 @@
  *
  *
  */
+ 
+ //namespace PhpChartHelper;
 
 abstract class APhpChartData {
 
+// I like manually counting the number of elements in the values array
 protected $counter = 0;
 
+// loads single dimensional array and the type needs to be specified if not going in as values (integers)
 public abstract function loadArray(array $settings, $type = 'values');
 
+// loads multi-dimensional array, need to give the key of the array and the type that is being loaded
 public abstract function loadKeyArray(array $array, $key, $type = 'values');
 
 

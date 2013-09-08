@@ -9,26 +9,35 @@
  *
  *
  */
-
+//namespace PhpChartHelper;
+ 
+ 
 class JsChartPie extends AJsChartHelpers {
 
+/* extended variables
+ * chartname, endjstag, jschartinit, enddatatag
+ *
+ */
 
 //in this class this needs to be a JsPieChartData object
 private $piechartdata;
 public $chart;
 
+//rendering the chart will build the javascript/jquery code and then echo it out. The chart is constructed by already set variables in abstract 
+//and extended classes and then string values which would be placed in this file
 public function renderChart() {
+//gotta make sure the object is set
 if($this->piechartdata != null) {
 	$this->chart = $this->getJsChartInit();
+	//should probably use json_encode in the future...
 	for($i = 0; $i < $this->piechartdata->getCounter(); $i++) {
 		if($i > 0) {
 			$this->chart = $this->chart . '},{';
 		}
-		//for some reason I can pass in a literal integer but not a variable integer
 		$this->chart = $this->chart . 'value: ' . $this->piechartdata->getValue($i) . ',';
 		$this->chart = $this->chart . 'color: "' . $this->piechartdata->getColor($i) . '"';
 	}
-	$this->chart = $this->chart . '}];';
+	$this->chart = $this->chart . $this->enddatatag;
 	$this->chart = $this->chart . 'var ' . $this->chartname . 'newchart  = new Chart(' .$this->chartname.'chart).Pie('.$this->chartname.'data);';
 	$this->chart = $this->chart . $this->endjstag;
 	echo $this->chart;
@@ -40,6 +49,7 @@ if($this->piechartdata != null) {
 
 //need to error handle if the wrong type of data gets passed here
 public function setData(AJsBaseChartData $piechartdata) {
+	//checks if class is correct for this object
 	if(get_class($piechartdata) == 'JsPieChartData'){
 		$this->piechartdata = $piechartdata;
 	}

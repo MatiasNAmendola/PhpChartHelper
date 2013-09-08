@@ -8,6 +8,9 @@
  * variable names are going to be all lowercase
  * 
  */
+//namespace PhpChartHelper;
+
+//need to make this a testing class...
 
 class JsChartHelpers extends AJsChartHelpers {
 

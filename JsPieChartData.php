@@ -10,10 +10,11 @@
  *
  * Only single dimensional arrays are accepted.
  */
-
+//namespace PhpChartHelper;
+ 
 class JsPieChartData extends AJsBaseChartData {
 
-
+// defaults will probably go here? No idea... just need a concrete class for the pie chart data
 }
 
 ?>

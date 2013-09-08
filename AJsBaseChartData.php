@@ -9,14 +9,17 @@
  *
  *
  */
+ 
+ //namespace PhpChartHelper;
 
 
 abstract class AJsBaseChartData extends APhpChartData {
 
-
+//All chartjs objects have values and colors. Colors array may be used differently per class
 protected $values = array();
 protected $colors = array();
 
+//loads a single dimensional array as values array
 public function loadValues(array $values) {
 	foreach($values as $value) {
 		array_push($this->values, $value);
@@ -24,6 +27,7 @@ public function loadValues(array $values) {
 	}
 }
 
+//loads a multidimensinoal array. must provide key
 public function loadValuesByKey(array $values, $key) {
 	foreach($values as $value) {
 		array_push($this->values, $value[$key]);
@@ -31,19 +35,21 @@ public function loadValuesByKey(array $values, $key) {
 	}
 }
 
-
+//loads a single dimensional array as colors array
 public function loadColors(array $colors) {
 	foreach($colors as $color) {
 		array_push($this->colors, $color);
 	}
 }
 
+//loads a multidimensional array. must provide key
 public function loadColorsByKey(array $colors, $key) {
 	foreach($colors as $color) {
 		array_push($this->colors, $color[$key]);
 	}
 }
 
+//public method for loading (thinking about making other methods protected) must provide what type you are loading.
 public function loadArray(array $array, $type = 'values') {
 	if($type == 'values') {
 		$this->loadValues($array);
@@ -53,6 +59,7 @@ public function loadArray(array $array, $type = 'values') {
 	}
 }
 
+//public method for loading must provide type and key value
 public function loadKeyArray(array $array, $key, $type = 'values') {
 	if($type == 'values') {
 		$this->loadValuesByKey($array, $key);
@@ -63,10 +70,12 @@ public function loadKeyArray(array $array, $key, $type = 'values') {
 
 }
 
+//method for returning the index $int of the value array
 public function getValue($int) {
 	return $this->values[$int];
 }
 
+//method for returning the index $int of the colors array
 public function getColor($int) {
 	return $this->colors[$int];
 }

@@ -10,7 +10,7 @@
  * This is the basest of base classes for the chart helpers for Chartjs.
  * 
  */
-
+//namespace PhpChartHelper;
 
 //Getting all html and javascript redundancy out of the way
 abstract class AJsChartHelpers extends APhpChartHelpers {
@@ -20,9 +20,10 @@ abstract class AJsChartHelpers extends APhpChartHelpers {
  *
  */
 
-//every chart starts this way in Chart.js
+//every chart starts this way in Chartjs
 protected $jschartinit;
-protected $enddatatag = '}]';
+//end tag for json data (should eventually switch to json_encode)
+protected $enddatatag = '}];';
 
 
 //Setting chart name also sets up the beginning chart tag

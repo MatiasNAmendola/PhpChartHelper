@@ -9,13 +9,16 @@
  * 
  * Each and every chart object will have a name and the ability to render a chart's code regardless of anything else
  */
-
+//namespace PhpChartHelper;
+ 
 interface IPhpChartHelper {
 
+//all charts have names
 public function setChartName($chartname);
 
 public function getChartName();
 
+//all charts need to be rendered
 public function renderChart();
 
 }
