@@ -14,6 +14,11 @@ class JsChartColorIterator {
 
 public $colors = array("red","blue","yellow","green","pink","orange","black","white");
 
+
+public static function getColors() {
+	$colors = array("red","blue","yellow","green","pink","orange","black","white");
+	return $colors;
+}
 }
 
 ?>

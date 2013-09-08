@@ -20,7 +20,7 @@ public $chart;
 public function renderChart() {
 if($this->piechartdata != null) {
 	$this->chart = $this->getJsChartInit();
-	for($i = 0; $i <= $this->piechartdata->getCounter() -1; $i++) {
+	for($i = 0; $i < $this->piechartdata->getCounter(); $i++) {
 		if($i > 0) {
 			$this->chart = $this->chart . '},{';
 		}

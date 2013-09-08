@@ -34,7 +34,7 @@ public function loadValuesByKey(array $values, $key) {
 
 public function loadColors(array $colors) {
 	foreach($colors as $color) {
-		array_push($this->colors, $color[$key]);
+		array_push($this->colors, $color);
 	}
 }
 
