@@ -29,6 +29,7 @@ public function renderChart() {
 //gotta make sure the object is set
 if($this->piechartdata != null) {
 	$this->chart = $this->getJsChartInit();
+	$this->chart = $this->chart . '[{';
 	//should probably use json_encode in the future...
 	for($i = 0; $i < $this->piechartdata->getCounter(); $i++) {
 		if($i > 0) {
