@@ -70,11 +70,6 @@ public function loadKeyArray(array $array, $key, $type = 'values') {
 
 }
 
-//method for returning the index $int of the value array
-public function getValue($int) {
-	return $this->values[$int];
-}
-
 //method for returning the index $int of the colors array
 public function getColor($int) {
 	return $this->colors[$int];
