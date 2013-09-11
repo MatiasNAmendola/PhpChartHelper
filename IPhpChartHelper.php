@@ -21,6 +21,8 @@ public function getChartName();
 //all charts need to be rendered
 public function renderChart();
 
+public function setData(APhpChartData $data);
+
 }
 
 ?>

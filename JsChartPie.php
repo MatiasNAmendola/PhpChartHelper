@@ -49,10 +49,10 @@ if($this->piechartdata != null) {
 
 
 //need to error handle if the wrong type of data gets passed here
-public function setData(AJsBaseChartData $piechartdata) {
+public function setData(APhpChartData $data) {
 	//checks if class is correct for this object
-	if(get_class($piechartdata) == 'JsPieChartData'){
-		$this->piechartdata = $piechartdata;
+	if(get_class($data) == 'JsPieChartData'){
+		$this->piechartdata = $data;
 	}
 }
 

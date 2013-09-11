@@ -34,6 +34,7 @@ public function getChartName() {
 //All chart classes will render a chart
 abstract public function renderChart();
 
+abstract public function setData(APhpChartData $data);
 }
 
 
