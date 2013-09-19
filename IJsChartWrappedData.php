@@ -17,9 +17,6 @@ interface IJsChartWrappedData {
 
 public function returnDataSet();
 
-public function setLabel($string);
-
-public function getLabel();
 }
 
 ?>

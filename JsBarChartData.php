@@ -16,10 +16,14 @@ class JsBarChartData extends APhpChartData implements IJsChartDataWrapper {
 
 
 protected $values = array();
-
+protected $labels = array();
 
 public function addDataSet(IJsChartWrappedData $data) {
 	array_push($this->values = $data);
+}
+
+public function setLabel($string) {
+	array_push($this->labels = $string);
 }
 
 }

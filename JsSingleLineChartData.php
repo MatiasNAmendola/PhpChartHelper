@@ -14,22 +14,12 @@
  
 class JsSingleLineChartData extends AJsBaseChartData implements IJsChartWrappedData {
 
-protected $label;
 // will set these to default values
 protected $fillcolor;
 protected $strokecolor;
 protected $pointcolor;
 protected $pointstrokecolor;
 protected $dataset;
-//protected $linecount;
-
-public function setLabel($string) {
-	$this->label = $string;
-}
-
-public function getLabel() {
-	return $this->label;
-}
 
 public function setFillColor($string) {
 	$this->fillcolor = $string;

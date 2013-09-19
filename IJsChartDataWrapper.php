@@ -16,6 +16,7 @@ interface IJsChartDataWrapper {
 
 public function addDataSet(IJsChartWrappedData $data);
 
+public function setLabel($string);
 
 }
 
