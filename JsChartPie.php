@@ -20,23 +20,23 @@ class JsChartPie extends AJsChartHelpers {
  */
 
 //in this class this needs to be a JsPieChartData object
-private $piechartdata;
+private $chartdata;
 public $chart;
 
 //rendering the chart will build the javascript/jquery code and then echo it out. The chart is constructed by already set variables in abstract 
 //and extended classes and then string values which would be placed in this file
 public function renderChart() {
 //gotta make sure the object is set
-if($this->piechartdata != null) {
+if($this->chartdata != null) {
 	$this->chart = $this->getJsChartInit();
 	$this->chart = $this->chart . '[{';
 	//should probably use json_encode in the future...
-	for($i = 0; $i < $this->piechartdata->getCounter(); $i++) {
+	for($i = 0; $i < $this->chartdata->getCounter(); $i++) {
 		if($i > 0) {
 			$this->chart = $this->chart . '},{';
 		}
-		$this->chart = $this->chart . 'value: ' . $this->piechartdata->getValue($i) . ',';
-		$this->chart = $this->chart . 'color: "' . $this->piechartdata->getColor($i) . '"';
+		$this->chart = $this->chart . 'value: ' . $this->chartdata->getValue($i) . ',';
+		$this->chart = $this->chart . 'color: "' . $this->chartdata->getColor($i) . '"';
 	}
 	$this->chart = $this->chart . $this->enddatatag;
 	$this->chart = $this->chart . 'var ' . $this->chartname . 'newchart  = new Chart(' .$this->chartname.'chart).Pie('.$this->chartname.'data);';
@@ -52,7 +52,7 @@ if($this->piechartdata != null) {
 public function setData(APhpChartData $data) {
 	//checks if class is correct for this object
 	if(get_class($data) == 'JsPieChartData'){
-		$this->piechartdata = $data;
+		$this->chartdata = $data;
 	}
 }
 

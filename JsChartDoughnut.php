@@ -12,14 +12,14 @@
  */
 //namespace PhpChartHelper;
  
-class JsChartPolar extends AJsChartHelpers {
+class JsChartDoughnut extends AJsChartHelpers {
 
 /* extended variables
  * chartname, endjstag, jschartinit, enddatatag
  *
  */
 
-//in this class this needs to be a JsPolarChartData object
+//in this class this needs to be a JsDoughnutChartData object
 private $chartdata;
 public $chart;
 
@@ -37,7 +37,7 @@ if($this->chartdata != null) {
 		$this->chart = $this->chart . 'color: "' . $this->chartdata->getColor($i) . '"';
 	}
 	$this->chart = $this->chart . $this->enddatatag;
-	$this->chart = $this->chart . 'var ' . $this->chartname . 'newchart  = new Chart(' .$this->chartname.'chart).PolarArea('.$this->chartname.'data);';
+	$this->chart = $this->chart . 'var ' . $this->chartname . 'newchart  = new Chart(' .$this->chartname.'chart).Doughnut('.$this->chartname.'data);';
 	$this->chart = $this->chart . $this->endjstag;
 	echo $this->chart;
 	}else{	
@@ -49,7 +49,7 @@ if($this->chartdata != null) {
 //need to error handle if the wrong type of data gets passed here
 public function setData(AJsBaseChartData $chartdata) {
 	//I still need to make a PolarChart type, when I get around to enabling defaults to be plugged in for the charts I will do this
-	if(get_class($chartdata) == 'JsPolarChartData'){
+	if(get_class($chartdata) == 'JsDoughnutChartData'){
 		$this->chartdata = $chartdata;
 	}
 }
