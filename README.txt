@@ -25,3 +25,6 @@ I will update this readme with new jquery/javascript libraries I add
 	  #                             ###                        #
 	  #                             ###                        #
 	  #                             ###                        #
+
+	  
+############# AMCHARTS COMING NEXT ###################################
